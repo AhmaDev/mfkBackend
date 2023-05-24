@@ -3,6 +3,7 @@ const capitalize = require("../helpers/capitalize");
 const connection = require("../helpers/db");
 var router = express.Router();
 var path = require("path");
+const upload = require("../middleware/upload.middleware");
 
 const tableName = path.basename(__filename).split(".")[0];
 
