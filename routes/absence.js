@@ -11,7 +11,7 @@ router.get(`/${tableName}s`, function (req, res, next) {
   if (req.query.dateFrom && req.query.dateTo) {
     query =
       query +
-      `AND CAST(createdAt AS DATE) BETWEEN '${req.query.dateFrom}' AND '${req.query.dateTo}'`;
+      `AND DATE(absenceDate) BETWEEN '${req.query.dateFrom}' AND '${req.query.dateTo}'`;
   }
   if (req.query.employeeId) {
     query = query + `AND employeeId = ${req.query.employeeId}`;
